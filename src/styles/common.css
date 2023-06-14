@@ -4,4 +4,10 @@
   padding: 0;
   font-family: 'Nunito';
 }
+.active-filter {
+  border-color: blue;
+}
+.is-done {
+  opacity: 0.5;
+}
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
