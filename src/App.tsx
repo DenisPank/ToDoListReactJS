@@ -51,6 +51,15 @@ const App: FC = () => {
       setTasks({ ...tasksObj })
     }
   }
+  function changeTaskTitle(taskId: string, newTitle: string, todolistId: string) {
+    let tasks = tasksObj[todolistId]
+    let task = tasks.find(t => t.id === taskId)
+    if (task) {
+      task.title = newTitle
+
+      setTasks({ ...tasksObj })
+    }
+  }
 
   let todolistId1 = v1()
   let todolistId2 = v1()
@@ -78,6 +87,13 @@ const App: FC = () => {
 
     delete tasksObj[todolistId]
     setTasks({ ...tasksObj })
+  }
+  function changeTodolistTitle(id: string, newTitle: string) {
+    const todolist = todolists.find(tl => tl.id === id)
+    if (todolist) {
+      todolist.title = newTitle
+      setTodolists([...todolists])
+    }
   }
 
   function addTodolist(title: string) {
@@ -116,6 +132,8 @@ const App: FC = () => {
               changeFilter={changeFilter}
               addTask={addTask}
               changeTaskStatus={changeStatus}
+              changeTaskTitle={changeTaskTitle}
+              changeTodolistTitle={changeTodolistTitle}
               filter={tl.filter}
               removeTodolist={removeTodolist}
             />
