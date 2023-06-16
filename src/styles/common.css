@@ -10,4 +10,11 @@
 .is-done {
   opacity: 0.5;
 }
+
+.todolist-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+  margin-top: 50px;
+}
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
